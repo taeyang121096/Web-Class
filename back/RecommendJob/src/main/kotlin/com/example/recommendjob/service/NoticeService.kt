@@ -11,4 +11,7 @@ class NoticeService(private val postRepo: NoticePostRepo) {
     @Transactional(readOnly = true)
     fun findAllPosts(): List<NoticePost> = postRepo.findAll()
 
+    @Transactional
+    fun savePost(post: NoticePost): NoticePost = postRepo.save(post)
+
 }
